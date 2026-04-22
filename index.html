@@ -113,21 +113,48 @@
     animation: fadeUp 0.9s 0.7s forwards;
     margin-bottom: 2.5rem;
   }
-  .hero-chips {
-    display: flex; gap: 0.8rem; flex-wrap: wrap;
+  .hero-software {
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    gap: 0.75rem 1.2rem;
     opacity: 0;
     animation: fadeUp 0.9s 0.8s forwards;
+    width: fit-content;
   }
-  .chip {
-    display: inline-flex; align-items: center; gap: 0.4rem;
-    padding: 0.4rem 1rem;
-    border: 1px solid var(--border);
-    border-radius: 100px;
-    font-size: 0.8rem;
-    color: var(--muted);
+  .hero-sw-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.3rem;
+    cursor: default;
+    pointer-events: none;
+  }
+  .hero-sw-icon {
+    width: 22px; height: 22px;
+    display: flex; align-items: center; justify-content: center;
+    filter: brightness(0) invert(1) sepia(1) saturate(5) hue-rotate(40deg);
+    opacity: 0.8;
+  }
+  .hero-sw-icon img { width: 20px; height: 20px; object-fit: contain; }
+  .hero-sw-text {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 0.48rem;
+    letter-spacing: 0.04em;
+    color: var(--accent);
+    text-align: center;
+    line-height: 1.2;
+    filter: none !important;
+    opacity: 0.8;
+    width: 20px; height: 20px;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .hero-sw-label {
+    font-size: 0.6rem;
+    color: var(--accent);
     letter-spacing: 0.03em;
+    opacity: 0.6;
   }
-  .chip.accent { border-color: rgba(200,255,62,0.3); color: var(--accent); background: var(--tag-bg); }
 
   .scroll-hint {
     position: absolute; bottom: 2.5rem; right: 3rem; z-index: 1;
@@ -529,6 +556,69 @@
   .work-item.hidden-overflow {
     display: none;
   }
+
+  /* ── SOFTWARE ICONS ── */
+  .software-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.8rem 1.2rem;
+  }
+  .software-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.6rem;
+    opacity: 0;
+    transform: translateY(12px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+  .software-item.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .software-icon {
+    width: 42px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    filter: brightness(0) invert(0.55);
+    transition: filter 0.25s;
+  }
+  .software-icon img {
+    width: 36px;
+    height: 36px;
+    object-fit: contain;
+  }
+  .software-icon.text-icon {
+    width: 42px;
+    height: 42px;
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 0.65rem;
+    letter-spacing: 0.04em;
+    color: var(--muted);
+    text-align: center;
+    line-height: 1.2;
+    filter: none;
+  }
+  .software-item:hover .software-icon {
+    filter: brightness(0) invert(1);
+  }
+  .software-item:hover .software-icon.text-icon {
+    color: var(--text);
+    filter: none;
+  }
+  .software-label {
+    font-size: 0.72rem;
+    color: var(--muted);
+    letter-spacing: 0.04em;
+    text-align: center;
+    transition: color 0.25s;
+  }
+  .software-item:hover .software-label {
+    color: var(--text);
+  }
 </style>
 </head>
 <body>
@@ -554,11 +644,39 @@
     <p class="hero-desc">
       Моушн дизайнер с опытом в рекламе и мобильном геймдеве.
     </p>
-    <div class="hero-chips">
-      <span class="chip accent">Unity Video Artist</span>
-      <span class="chip">After Effects</span>
-      <span class="chip">Motion Graphics</span>
-      <span class="chip">Mobile Gamedev</span>
+    <div class="hero-software" id="heroSoftware">
+      <div class="hero-sw-item">
+        <div class="hero-sw-icon"><img src="https://cdn.simpleicons.org/aftereffects/ffffff" alt="After Effects"></div>
+        <span class="hero-sw-label">After Effects</span>
+      </div>
+      <div class="hero-sw-item">
+        <div class="hero-sw-icon"><img src="https://cdn.simpleicons.org/unity/ffffff" alt="Unity"></div>
+        <span class="hero-sw-label">Unity</span>
+      </div>
+      <div class="hero-sw-item">
+        <div class="hero-sw-icon"><img src="https://cdn.simpleicons.org/blender/ffffff" alt="Blender"></div>
+        <span class="hero-sw-label">Blender</span>
+      </div>
+      <div class="hero-sw-item">
+        <div class="hero-sw-icon hero-sw-text">SPINE<br>2D</div>
+        <span class="hero-sw-label">Spine 2D</span>
+      </div>
+      <div class="hero-sw-item">
+        <div class="hero-sw-icon"><img src="https://cdn.simpleicons.org/adobephotoshop/ffffff" alt="Photoshop"></div>
+        <span class="hero-sw-label">Photoshop</span>
+      </div>
+      <div class="hero-sw-item">
+        <div class="hero-sw-icon"><img src="https://cdn.simpleicons.org/adobeillustrator/ffffff" alt="Illustrator"></div>
+        <span class="hero-sw-label">Illustrator</span>
+      </div>
+      <div class="hero-sw-item">
+        <div class="hero-sw-icon"><img src="https://cdn.simpleicons.org/cinema4d/ffffff" alt="Cinema 4D"></div>
+        <span class="hero-sw-label">Cinema 4D</span>
+      </div>
+      <div class="hero-sw-item">
+        <div class="hero-sw-icon"><img src="https://cdn.simpleicons.org/figma/ffffff" alt="Figma"></div>
+        <span class="hero-sw-label">Figma</span>
+      </div>
     </div>
   </div>
   <div class="scroll-hint">
@@ -1334,34 +1452,52 @@
       </div>
     </div>
 
-    <div class="skills-blocks fade-in-up">
-      <div class="skills-category">
-        <h4>Видео и анимация</h4>
-        <div class="skills-wrap">
-          <span class="skill-item">After Effects</span>
-          <span class="skill-item">Premiere Pro</span>
-          <span class="skill-item">Cinema 4D</span>
-          <span class="skill-item">Spine 2D</span>
-          <span class="skill-item">DaVinci Resolve</span>
+    <div class="software-grid" id="softwareGrid">
+      <div class="software-item">
+        <div class="software-icon">
+          <img src="https://cdn.simpleicons.org/aftereffects/ffffff" alt="After Effects">
         </div>
+        <span class="software-label">After Effects</span>
       </div>
-      <div class="skills-category">
-        <h4>Gamedev</h4>
-        <div class="skills-wrap">
-          <span class="skill-item">Unity</span>
-          <span class="skill-item">Timeline / Cinemachine</span>
-          <span class="skill-item">Particle System</span>
-          <span class="skill-item">VFX Graph</span>
+      <div class="software-item">
+        <div class="software-icon">
+          <img src="https://cdn.simpleicons.org/unity/ffffff" alt="Unity">
         </div>
+        <span class="software-label">Unity</span>
       </div>
-      <div class="skills-category">
-        <h4>3D и дизайн</h4>
-        <div class="skills-wrap">
-          <span class="skill-item">Blender</span>
-          <span class="skill-item">Photoshop</span>
-          <span class="skill-item">Illustrator</span>
-          <span class="skill-item">Figma</span>
+      <div class="software-item">
+        <div class="software-icon">
+          <img src="https://cdn.simpleicons.org/blender/ffffff" alt="Blender">
         </div>
+        <span class="software-label">Blender</span>
+      </div>
+      <div class="software-item">
+        <div class="software-icon text-icon">SPINE<br>2D</div>
+        <span class="software-label">Spine 2D</span>
+      </div>
+      <div class="software-item">
+        <div class="software-icon">
+          <img src="https://cdn.simpleicons.org/adobephotoshop/ffffff" alt="Photoshop">
+        </div>
+        <span class="software-label">Photoshop</span>
+      </div>
+      <div class="software-item">
+        <div class="software-icon">
+          <img src="https://cdn.simpleicons.org/adobeillustrator/ffffff" alt="Illustrator">
+        </div>
+        <span class="software-label">Illustrator</span>
+      </div>
+      <div class="software-item">
+        <div class="software-icon">
+          <img src="https://cdn.simpleicons.org/cinema4d/ffffff" alt="Cinema 4D">
+        </div>
+        <span class="software-label">Cinema 4D</span>
+      </div>
+      <div class="software-item">
+        <div class="software-icon">
+          <img src="https://cdn.simpleicons.org/figma/ffffff" alt="Figma">
+        </div>
+        <span class="software-label">Figma</span>
       </div>
     </div>
   </div>
@@ -1620,6 +1756,21 @@ const observer = new IntersectionObserver((entries) => {
   });
 }, { threshold: 0.1 });
 document.querySelectorAll('.fade-in-up').forEach(el => observer.observe(el));
+
+// ── Software icons stagger ──
+const iconObserver = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      const items = e.target.querySelectorAll('.software-item');
+      items.forEach((item, i) => {
+        setTimeout(() => item.classList.add('visible'), i * 80);
+      });
+      iconObserver.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.2 });
+const grid = document.getElementById('softwareGrid');
+if (grid) iconObserver.observe(grid);
 
 // ── Typewriter ──
 (function() {
