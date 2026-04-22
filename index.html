@@ -474,6 +474,64 @@
     footer { flex-direction: column; gap: 0.5rem; text-align: center; }
     .scroll-hint { display: none; }
   }
+
+  /* ── SUBTAGS ── */
+  .subtags-wrap {
+    display: flex; flex-wrap: wrap; gap: 0.5rem;
+    margin-bottom: 2.5rem;
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+    transition: max-height 0.4s ease, opacity 0.35s ease, margin 0.4s ease;
+  }
+  .subtags-wrap.visible {
+    max-height: 120px;
+    opacity: 1;
+    margin-bottom: 2.5rem;
+  }
+  .subtag-btn {
+    background: none; border: 1px solid var(--border); cursor: pointer;
+    padding: 0.35rem 1rem;
+    border-radius: 100px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.8rem;
+    color: var(--muted);
+    letter-spacing: 0.03em;
+    transition: all 0.2s;
+    white-space: nowrap;
+  }
+  .subtag-btn:hover { color: var(--text); border-color: rgba(255,255,255,0.2); }
+  .subtag-btn.active { color: var(--bg); background: var(--accent); border-color: var(--accent); }
+
+  /* ── SHOW MORE ── */
+  .show-more-wrap {
+    text-align: center;
+    padding: 2rem 0 1rem;
+    border-top: 1px solid var(--border);
+    margin-top: 1rem;
+  }
+  .show-more-btn {
+    background: none;
+    border: 1px solid var(--border);
+    border-radius: 100px;
+    padding: 0.65rem 2rem;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.85rem;
+    color: var(--muted);
+    cursor: pointer;
+    letter-spacing: 0.04em;
+    transition: all 0.2s;
+    display: inline-flex; align-items: center; gap: 0.5rem;
+  }
+  .show-more-btn:hover { color: var(--text); border-color: rgba(255,255,255,0.2); }
+  .show-more-btn .arrow { transition: transform 0.3s; display: inline-block; }
+  .show-more-btn.open .arrow { transform: rotate(180deg); }
+  .work-item.hidden-overflow {
+    display: none;
+  }
+  .work-item.hidden-overflow.revealed {
+    display: grid;
+  }
 </style>
 </head>
 <body>
@@ -517,16 +575,23 @@
   <div class="section-label">Selected Works</div>
   <h2 class="section-title">Работы</h2>
 
-  <div class="filter-tabs">
-    <button class="filter-btn active" data-filter="all">Все работы</button>
-    <button class="filter-btn" data-filter="gamedev">Gamedev · Unity</button>
-    <button class="filter-btn" data-filter="agency">E-commerce</button>
+  <div class="filter-tabs" id="mainTabs">
+    <button class="filter-btn active" data-filter="gamedev" onclick="selectMainTab(this, 'gamedev')">Gamedev · Unity</button>
+    <button class="filter-btn" data-filter="agency" onclick="selectMainTab(this, 'agency')">E-commerce</button>
+  </div>
+  <div class="subtags-wrap" id="subtagsWrap">
+    <button class="subtag-btn active" data-subtag="all">Все работы</button>
+    <button class="subtag-btn" data-subtag="character-animation">Character Animation</button>
+    <button class="subtag-btn" data-subtag="game-mods">Моды с заменой логики игры</button>
+    <button class="subtag-btn" data-subtag="unity-cam">Unity Cam</button>
+    <button class="subtag-btn" data-subtag="vfx">VFX</button>
+    <button class="subtag-btn" data-subtag="level-custom">Кастомизация уровня</button>
   </div>
 
   <div class="works-list" id="worksList">
 
     <!-- === GAMEDEV WORKS === -->
-    <div class="work-item fade-in-up" data-category="gamedev">
+    <div class="work-item fade-in-up" data-category="gamedev" data-subtags="character-animation">
       <div class="work-video-wrap" id="vwrap-1">
         <video src="videos/battle_lines.mp4" controls playsinline preload="metadata"></video>
       </div>
@@ -555,7 +620,7 @@
       </div>
     </div>
 
-    <div class="work-item fade-in-up" data-category="gamedev">
+    <div class="work-item fade-in-up" data-category="gamedev" data-subtags="">
       <div class="work-video-wrap" id="vwrap-2">
         <div class="video-placeholder" onclick="showUrlForm('vwrap-2')">
           <div class="play-icon">▶</div>
@@ -587,7 +652,7 @@
       </div>
     </div>
 
-    <div class="work-item fade-in-up" data-category="gamedev">
+    <div class="work-item fade-in-up" data-category="gamedev" data-subtags="">
       <div class="work-video-wrap" id="vwrap-3">
         <div class="video-placeholder" onclick="showUrlForm('vwrap-3')">
           <div class="play-icon">▶</div>
@@ -620,7 +685,7 @@
     </div>
 
     <!-- Extra gamedev slot -->
-    <div class="work-item fade-in-up" data-category="gamedev">
+    <div class="work-item fade-in-up" data-category="gamedev" data-subtags="">
       <div class="work-video-wrap" id="vwrap-4">
         <div class="video-placeholder" onclick="showUrlForm('vwrap-4')">
           <div class="play-icon">▶</div>
@@ -747,6 +812,12 @@
       </div>
     </div>
 
+  </div>
+  <div class="show-more-wrap" id="showMoreWrap" style="display:none;">
+    <button class="show-more-btn" id="showMoreBtn" onclick="toggleShowMore()">
+      <span>Ещё больше видео</span>
+      <span class="arrow">↓</span>
+    </button>
   </div>
 </section>
 
@@ -970,20 +1041,117 @@ function loadFromStorage() {
   } catch(e) {}
 }
 
-// ── Filter tabs ──
-document.querySelectorAll('.filter-btn').forEach(btn => {
-  btn.addEventListener('click', () => {
-    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-    const filter = btn.dataset.filter;
-    document.querySelectorAll('.work-item').forEach(item => {
-      if (filter === 'all' || item.dataset.category === filter) {
-        item.classList.remove('hidden');
-      } else {
-        item.classList.add('hidden');
-      }
-    });
+// ── Constants ──
+const VISIBLE_COUNT = 5;
+let showMoreOpen = false;
+
+// ── Main tab logic ──
+function selectMainTab(btn, category) {
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+
+  const subWrap = document.getElementById('subtagsWrap');
+  if (category === 'gamedev') {
+    subWrap.classList.add('visible');
+  } else {
+    subWrap.classList.remove('visible');
+    // reset subtags
+    document.querySelectorAll('.subtag-btn').forEach(b => b.classList.remove('active'));
+    document.querySelector('.subtag-btn[data-subtag="all"]').classList.add('active');
+  }
+
+  // Show/hide items by category
+  document.querySelectorAll('.work-item').forEach(item => {
+    item.classList.remove('hidden', 'hidden-overflow', 'revealed');
+    if (item.dataset.category !== category) {
+      item.classList.add('hidden');
+    }
   });
+
+  if (category === 'gamedev') {
+    applySubtag('all');
+  }
+
+  document.getElementById('showMoreWrap').style.display = 'none';
+  showMoreOpen = false;
+  const btn2 = document.getElementById('showMoreBtn');
+  if (btn2) btn2.classList.remove('open');
+}
+
+// ── Subtag logic ──
+function applySubtag(subtag) {
+  const allItems = Array.from(document.querySelectorAll('.work-item[data-category="gamedev"]'));
+
+  // Reset
+  allItems.forEach(item => {
+    item.classList.remove('hidden', 'hidden-overflow', 'revealed');
+  });
+
+  // Filter by subtag
+  const filtered = subtag === 'all'
+    ? allItems
+    : allItems.filter(item => {
+        const tags = (item.dataset.subtags || '').split(',');
+        return tags.includes(subtag);
+      });
+
+  const hidden = [];
+  allItems.forEach(item => {
+    if (!filtered.includes(item)) {
+      item.classList.add('hidden');
+    }
+  });
+
+  // Apply show-more: first 5 visible, rest hidden-overflow
+  let visibleCount = 0;
+  filtered.forEach(item => {
+    if (visibleCount < VISIBLE_COUNT) {
+      visibleCount++;
+    } else {
+      item.classList.add('hidden-overflow');
+    }
+  });
+
+  // Show/hide show-more button
+  const showMoreWrap = document.getElementById('showMoreWrap');
+  if (filtered.length > VISIBLE_COUNT) {
+    showMoreWrap.style.display = 'block';
+  } else {
+    showMoreWrap.style.display = 'none';
+  }
+
+  showMoreOpen = false;
+  const btn = document.getElementById('showMoreBtn');
+  if (btn) btn.classList.remove('open');
+}
+
+document.querySelectorAll('.subtag-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.subtag-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    applySubtag(btn.dataset.subtag);
+  });
+});
+
+// ── Show more ──
+function toggleShowMore() {
+  showMoreOpen = !showMoreOpen;
+  const btn = document.getElementById('showMoreBtn');
+  btn.classList.toggle('open', showMoreOpen);
+
+  document.querySelectorAll('.work-item.hidden-overflow').forEach(item => {
+    if (showMoreOpen) {
+      item.classList.add('revealed');
+    } else {
+      item.classList.remove('revealed');
+    }
+  });
+}
+
+// ── Init: show gamedev by default ──
+window.addEventListener('DOMContentLoaded', () => {
+  const gamedevBtn = document.querySelector('.filter-btn[data-filter="gamedev"]');
+  if (gamedevBtn) selectMainTab(gamedevBtn, 'gamedev');
 });
 
 // ── Scroll reveal ──
