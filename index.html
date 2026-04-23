@@ -460,7 +460,12 @@
     nav { padding: 1.2rem 1.5rem; }
     .nav-links { gap: 1.4rem; }
     section { padding: 4rem 1.5rem; }
-    #hero { padding: calc(5rem + 100px) 1.5rem 3rem; min-height: auto; }
+    #hero {
+      min-height: 100vh;
+      min-height: 100svh;
+      padding: 2rem 1.5rem 3rem;
+      justify-content: center;
+    }
     .hero-title { font-size: clamp(2rem, 8vw, 3rem); white-space: normal; }
     .hero-role-line { font-size: clamp(1rem, 5vw, 1.5rem); }
     .work-item { grid-template-columns: 1fr; }
