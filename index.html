@@ -184,6 +184,27 @@
 
   .work-item:last-child { border-bottom: 1px solid var(--border); }
 
+  /* ── AGENCY GALLERY MODE ── */
+  .works-list.agency-mode {
+    display: block;
+    columns: 2;
+    column-gap: 1.5rem;
+  }
+  .works-list.agency-mode .work-item {
+    display: block !important;
+    break-inside: avoid;
+    margin-bottom: 1.5rem;
+    padding: 0 !important;
+    border-top: none !important;
+    border-bottom: none !important;
+  }
+  .works-list.agency-mode .work-item:last-child { border-bottom: none !important; }
+  .works-list.agency-mode .work-info { display: none; }
+  .works-list.agency-mode .work-video-wrap {
+    margin: 0 !important;
+    aspect-ratio: 16/9;
+  }
+
   .work-video-wrap {
     aspect-ratio: 16/9;
     background: var(--bg3);
@@ -579,8 +600,7 @@
     <button class="subtag-btn" data-subtag="vfx" data-for="gamedev">VFX</button>
     <button class="subtag-btn" data-subtag="level-custom" data-for="gamedev">Кастомизация уровня</button>
     <!-- Agency subtags -->
-    <button class="subtag-btn" data-subtag="all" data-for="agency" style="display:none">Все работы</button>
-    <button class="subtag-btn" data-subtag="media" data-for="agency" style="display:none">Видео и статика</button>
+    <button class="subtag-btn active" data-subtag="media" data-for="agency" style="display:none">Видео и статика</button>
   </div>
 
   <div class="works-list" id="worksList">
@@ -1465,8 +1485,15 @@ function selectMainTab(btnEl, category) {
     b.classList.remove('active');
     b.style.display = b.dataset.for === category ? '' : 'none';
   });
-  const allSubtag = document.querySelector(`.subtag-btn[data-subtag="all"][data-for="${category}"]`);
-  if (allSubtag) allSubtag.classList.add('active');
+  // Agency: авто-выбор media; Gamedev: авто-выбор all
+  const defaultSubtag = category === 'agency' ? 'media' : 'all';
+  activeSubtag = defaultSubtag;
+  const defaultBtn = document.querySelector(`.subtag-btn[data-subtag="${defaultSubtag}"][data-for="${category}"]`);
+  if (defaultBtn) defaultBtn.classList.add('active');
+
+  // Переключение лейаута
+  const worksList = document.getElementById('worksList');
+  worksList.classList.toggle('agency-mode', category === 'agency');
 
   render();
 }
