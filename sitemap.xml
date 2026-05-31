@@ -6,29 +6,178 @@
     <lastmod>2026-05-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
+
+    <!-- Gamedev works -->
     <image:image>
       <image:loc>https://ilonakasumova.github.io/posters/battle_lines.jpg</image:loc>
-      <image:title>Battle Lines — Ilona Kasumova motion design</image:title>
+      <image:title>Battle Lines — fake 2D ad, character animation, After Effects, Duik Angela — Ilona Kasumova</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://ilonakasumova.github.io/posters/mergic_2d.jpg</image:loc>
+      <image:title>Mergic Merge & Magic — fake 2D ad, Higgsfield AI, After Effects — Ilona Kasumova</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://ilonakasumova.github.io/posters/star_trailer.jpg</image:loc>
+      <image:title>S.T.A.R. dynamic trailer — Unity cameras, mobile game ad — Ilona Kasumova</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://ilonakasumova.github.io/posters/star_trailer_2.jpg</image:loc>
+      <image:title>S.T.A.R. gameplay trailer — Unity cameras, motion design — Ilona Kasumova</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://ilonakasumova.github.io/posters/stack_ball_vfx.jpg</image:loc>
+      <image:title>Stack Ball — Asian market ad, VFX particle effects, Unity — Ilona Kasumova</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://ilonakasumova.github.io/posters/pick_me_up_mod.jpg</image:loc>
+      <image:title>Pick Me Up 3D — custom game mod, C#, Unity, PathToFollow — Ilona Kasumova</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://ilonakasumova.github.io/posters/find_easy_2d.jpg</image:loc>
+      <image:title>Find It Easy — fake 2D ad, Duik Angela, Puppet Pin, After Effects — Ilona Kasumova</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://ilonakasumova.github.io/posters/stack_ball_blender.jpg</image:loc>
+      <image:title>Stack Ball — animated 3D characters, Blender rig, Unity level customization — Ilona Kasumova</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://ilonakasumova.github.io/posters/rush_hour_trailer.jpg</image:loc>
+      <image:title>Rush Hour 3D — dynamic gameplay trailer, multiple Unity cameras — Ilona Kasumova</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://ilonakasumova.github.io/posters/stack_ball_ocean.jpg</image:loc>
+      <image:title>Stack Ball ocean level — water shader, Blender characters, Unity — Ilona Kasumova</image:title>
     </image:image>
     <image:image>
       <image:loc>https://ilonakasumova.github.io/posters/draw_hero.jpg</image:loc>
-      <image:title>Draw Hero — Ilona Kasumova motion design</image:title>
+      <image:title>Draw Hero — fake ad, 3D models, VFX explosion particles, Unity — Ilona Kasumova</image:title>
     </image:image>
     <image:image>
       <image:loc>https://ilonakasumova.github.io/posters/eating_hero.jpg</image:loc>
-      <image:title>Eating Hero — Ilona Kasumova motion design</image:title>
+      <image:title>Eating Hero — fake 3D opening, animation, Unity Particle System — Ilona Kasumova</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://ilonakasumova.github.io/posters/harvest_mod.jpg</image:loc>
+      <image:title>Harvest.io — custom game mod, expanded mechanics, C#, Unity — Ilona Kasumova</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://ilonakasumova.github.io/posters/tap_arrows_gallery.jpg</image:loc>
+      <image:title>Tap Arrows Gallery — fake 2D ad, After Effects — Ilona Kasumova</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://ilonakasumova.github.io/posters/stack_ball_cat.jpg</image:loc>
+      <image:title>Stack Ball cat mod — meme sprite, reactive animation, C#, Unity — Ilona Kasumova</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://ilonakasumova.github.io/posters/hidden_object.jpg</image:loc>
+      <image:title>Hidden Object — AI-generated visuals, Puppet Pins, After Effects — Ilona Kasumova</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://ilonakasumova.github.io/posters/eating_hero_mod.jpg</image:loc>
+      <image:title>Eating Hero custom mod — shrink mechanic, C#, Unity — Ilona Kasumova</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://ilonakasumova.github.io/posters/go_escape.jpg</image:loc>
+      <image:title>Go Escape — custom camera script, smooth follow, Unity — Ilona Kasumova</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://ilonakasumova.github.io/posters/stack_ball_fog.jpg</image:loc>
+      <image:title>Stack Ball — custom level, interactive 3D background, volumetric fog, Unity — Ilona Kasumova</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://ilonakasumova.github.io/posters/stack_ball_rig.jpg</image:loc>
+      <image:title>Stack Ball — Blender rig and animation, Unity integration — Ilona Kasumova</image:title>
     </image:image>
     <image:image>
       <image:loc>https://ilonakasumova.github.io/posters/color_invaders_fallout.jpg</image:loc>
-      <image:title>Color Invaders Fallout — Ilona Kasumova motion design</image:title>
+      <image:title>Color Invaders Fallout-themed — Nuka-Cola, Vault Dweller suits, Unity — Ilona Kasumova</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://ilonakasumova.github.io/posters/star_bears.jpg</image:loc>
+      <image:title>S.T.A.R. bears level — custom level, Blender rigging, hand-crafted textures, Unity — Ilona Kasumova</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://ilonakasumova.github.io/posters/star_wonka.jpg</image:loc>
+      <image:title>S.T.A.R. Wonka-themed level — 3D assets, Blender, Unity — Ilona Kasumova</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://ilonakasumova.github.io/posters/stack_ball_anim_bg.jpg</image:loc>
+      <image:title>Stack Ball animated level background — Blender 3D — Ilona Kasumova</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://ilonakasumova.github.io/posters/tap_gallery_opening.jpg</image:loc>
+      <image:title>Tap Gallery fake puzzle opening — custom script, motion design — Ilona Kasumova</image:title>
+    </image:image>
+
+    <!-- E-commerce works -->
+    <image:image>
+      <image:loc>https://ilonakasumova.github.io/posters/ecom_activia.jpg</image:loc>
+      <image:title>Activia e-commerce ad creative — motion design — Ilona Kasumova</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://ilonakasumova.github.io/posters/ecom_gucci.jpg</image:loc>
+      <image:title>Gucci e-commerce ad creative — motion design — Ilona Kasumova</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://ilonakasumova.github.io/posters/ecom_mac.jpg</image:loc>
+      <image:title>MAC Cosmetics e-commerce ad creative — motion design — Ilona Kasumova</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://ilonakasumova.github.io/posters/ecom_soda.jpg</image:loc>
+      <image:title>Soda e-commerce ad creative — motion design — Ilona Kasumova</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://ilonakasumova.github.io/posters/ecom_bnb.jpg</image:loc>
+      <image:title>BnB e-commerce ad creative — motion design — Ilona Kasumova</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://ilonakasumova.github.io/posters/ecom_splat.jpg</image:loc>
+      <image:title>Splat e-commerce ad creative — motion design — Ilona Kasumova</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://ilonakasumova.github.io/posters/ecom_igooods.jpg</image:loc>
+      <image:title>iGooods e-commerce ad creative — motion design — Ilona Kasumova</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://ilonakasumova.github.io/posters/ecom_joseon.jpg</image:loc>
+      <image:title>Joseon Beauty e-commerce ad creative — motion design — Ilona Kasumova</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://ilonakasumova.github.io/posters/ecom_pony.jpg</image:loc>
+      <image:title>Pony e-commerce ad creative — motion design — Ilona Kasumova</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://ilonakasumova.github.io/posters/ecom_sushi.jpg</image:loc>
+      <image:title>Sushi e-commerce ad creative — motion design — Ilona Kasumova</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://ilonakasumova.github.io/posters/ecom_delimobil.jpg</image:loc>
+      <image:title>Delimobil e-commerce ad creative — motion design — Ilona Kasumova</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://ilonakasumova.github.io/posters/ecom_yandex.jpg</image:loc>
+      <image:title>Yandex e-commerce ad creative — motion design — Ilona Kasumova</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://ilonakasumova.github.io/posters/ecom_1080.jpg</image:loc>
+      <image:title>E-commerce video ad 1080p — motion design — Ilona Kasumova</image:title>
     </image:image>
     <image:image>
       <image:loc>https://ilonakasumova.github.io/images/ecom_zolotoe.png</image:loc>
-      <image:title>E-commerce ad creative — Ilona Kasumova motion design</image:title>
+      <image:title>Zolotoe e-commerce banner — motion design — Ilona Kasumova</image:title>
     </image:image>
     <image:image>
       <image:loc>https://ilonakasumova.github.io/images/ecom_musicmts.png</image:loc>
-      <image:title>MTS Music ad banner — Ilona Kasumova motion design</image:title>
+      <image:title>MTS Music e-commerce banner — motion design — Ilona Kasumova</image:title>
     </image:image>
+    <image:image>
+      <image:loc>https://ilonakasumova.github.io/images/ecom_square.png</image:loc>
+      <image:title>E-commerce square banner — motion design — Ilona Kasumova</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://ilonakasumova.github.io/images/ecom_banner.jpg</image:loc>
+      <image:title>E-commerce banner — motion design — Ilona Kasumova</image:title>
+    </image:image>
+
   </url>
 </urlset>
