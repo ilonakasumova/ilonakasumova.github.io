@@ -262,6 +262,14 @@
   .agency-col .ratio-1x1  { aspect-ratio: 1/1; }
   .agency-col .ratio-9x16 { aspect-ratio: 9/16; }
   .agency-col iframe { height: auto; }
+  .ai-wrap { position: relative; }
+  .ai-badge {
+    position: absolute; top: 10px; left: 10px; z-index: 2;
+    padding: 4px 8px; border-radius: 6px;
+    background: var(--accent); color: var(--bg);
+    font-size: 0.75rem; font-weight: 700; line-height: 1; letter-spacing: 0.05em;
+    pointer-events: none;
+  }
   @media (max-width: 900px) {
     .agency-row { flex-direction: column; }
   }
@@ -1055,17 +1063,17 @@
       <div class="agency-col">
         <iframe class="ratio-1x1" width="315" height="315" src="https://runtime.video.cloud.yandex.net/player/video/vplvsceasn3hbfog2pgj?autoplay=0&mute=0" allow="autoplay; fullscreen; accelerometer; gyroscope; picture-in-picture; encrypted-media" frameborder="0" scrolling="no"></iframe>
         <iframe class="ratio-1x1" width="315" height="315" src="https://runtime.video.cloud.yandex.net/player/video/vplv6cqiapga6djezpnk?autoplay=0&mute=0" allow="autoplay; fullscreen; accelerometer; gyroscope; picture-in-picture; encrypted-media" frameborder="0" scrolling="no"></iframe>
-        <iframe class="ratio-9x16" width="315" height="560" src="https://runtime.video.cloud.yandex.net/player/video/vplvea7hyybharaev3kz?autoplay=0&mute=0" allow="autoplay; fullscreen; accelerometer; gyroscope; picture-in-picture; encrypted-media" frameborder="0" scrolling="no"></iframe>
-        <iframe class="ratio-9x16" width="315" height="560" src="https://runtime.video.cloud.yandex.net/player/video/vplvnqavujl3n2zqdjo3?autoplay=0&mute=0" allow="autoplay; fullscreen; accelerometer; gyroscope; picture-in-picture; encrypted-media" frameborder="0" scrolling="no"></iframe>
+        <div class="ai-wrap"><span class="ai-badge">AI</span><iframe class="ratio-9x16" width="315" height="560" src="https://runtime.video.cloud.yandex.net/player/video/vplvea7hyybharaev3kz?autoplay=0&mute=0" allow="autoplay; fullscreen; accelerometer; gyroscope; picture-in-picture; encrypted-media" frameborder="0" scrolling="no"></iframe></div>
+        <div class="ai-wrap"><span class="ai-badge">AI</span><iframe class="ratio-9x16" width="315" height="560" src="https://runtime.video.cloud.yandex.net/player/video/vplvnqavujl3n2zqdjo3?autoplay=0&mute=0" allow="autoplay; fullscreen; accelerometer; gyroscope; picture-in-picture; encrypted-media" frameborder="0" scrolling="no"></iframe></div>
         <iframe class="ratio-9x16" width="315" height="560" src="https://runtime.video.cloud.yandex.net/player/video/vplvgakwmqu474k4jlau?autoplay=0&mute=0" allow="autoplay; fullscreen; accelerometer; gyroscope; picture-in-picture; encrypted-media" frameborder="0" scrolling="no"></iframe>
       </div>
 
       <!-- Колонка 2 -->
       <div class="agency-col">
-        <iframe class="ratio-9x16" width="315" height="560" src="https://runtime.video.cloud.yandex.net/player/video/vplvwsryaeul4ozxwube?autoplay=0&mute=0" allow="autoplay; fullscreen; accelerometer; gyroscope; picture-in-picture; encrypted-media" frameborder="0" scrolling="no"></iframe>
+        <div class="ai-wrap"><span class="ai-badge">AI</span><iframe class="ratio-9x16" width="315" height="560" src="https://runtime.video.cloud.yandex.net/player/video/vplvwsryaeul4ozxwube?autoplay=0&mute=0" allow="autoplay; fullscreen; accelerometer; gyroscope; picture-in-picture; encrypted-media" frameborder="0" scrolling="no"></iframe></div>
         <img src="images/ecom_zolotoe.png" alt="Рекламный баннер Золотое — Ilona Kasumova motion design">
         <iframe class="ratio-9x16" width="315" height="560" src="https://runtime.video.cloud.yandex.net/player/video/vplv4xagzsl2ah7dgvgy?autoplay=0&mute=0" allow="autoplay; fullscreen; accelerometer; gyroscope; picture-in-picture; encrypted-media" frameborder="0" scrolling="no"></iframe>
-        <iframe class="ratio-9x16" width="315" height="560" src="https://runtime.video.cloud.yandex.net/player/video/vplvds56syulraydxc66?autoplay=0&mute=0" allow="autoplay; fullscreen; accelerometer; gyroscope; picture-in-picture; encrypted-media" frameborder="0" scrolling="no"></iframe>
+        <div class="ai-wrap"><span class="ai-badge">AI</span><iframe class="ratio-9x16" width="315" height="560" src="https://runtime.video.cloud.yandex.net/player/video/vplvds56syulraydxc66?autoplay=0&mute=0" allow="autoplay; fullscreen; accelerometer; gyroscope; picture-in-picture; encrypted-media" frameborder="0" scrolling="no"></iframe></div>
       </div>
 
       <!-- Колонка 3 -->
